@@ -10,5 +10,5 @@ foreman_initial_location: "{{ lookup('env','FOREMAN_INITIAL_LOCATION') }}"
 manifest_uuid: "{{ lookup('env', 'MANIFEST_UUID') }}"
 
 
-export_git_url: git@github.mmm.com:AAYM8ZZ/satellite-configuration-artifacts.git
+export_git_url: git@github.mmm.com:MMM/RHSat-configuration.git
 export_git_branch: jwtesting
