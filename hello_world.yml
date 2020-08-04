@@ -1,0 +1,8 @@
+---
+- name: Hello World example
+  hosts: all
+  tasks:
+
+  - name: Include dummy role
+    include_role:
+      name: ansible-role-dummy

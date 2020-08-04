@@ -1,0 +1,8 @@
+[blue_satellite]
+XXXblueSAT.mmm.com
+
+[blue_capsule]
+
+[red:children]
+blue_satellite
+blue_capsule

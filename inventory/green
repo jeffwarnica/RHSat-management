@@ -1,0 +1,8 @@
+[green_satellite]
+XXXgreenSAT.mmm.com
+
+[green_capsule]
+
+[green:children]
+green_satellite
+green_capsule

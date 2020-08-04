@@ -1,0 +1,8 @@
+[satellite]
+XXXredSAT.mmm.com
+
+[capsule]
+
+[red:children]
+satellite
+capsule

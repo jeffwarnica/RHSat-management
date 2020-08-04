@@ -1,0 +1,14 @@
+account_id: "{{ lookup('env','SAT_ACCOUNT_ID') }}"
+rhn_activation_key: "{{ lookup('env','RHN_AK') }}"
+rhn_org: "{{ lookup('env','RHN_ORG')}}"
+rhn_connect: "{{ lookup('env','RHN_CONNECT') }}"
+content_source: "{{ lookup('env','CONTENT_SOURCE') }}"
+satellite_admin_username: "{{ lookup('env','FOREMAN_USER') }}"
+satellite_admin_password: "{{ lookup('env','FOREMAN_PASSWORD') }}"
+foreman_initial_organization: "{{ lookup('env','FOREMAN_INITIAL_ORGANIZATION') }}"
+foreman_initial_location: "{{ lookup('env','FOREMAN_INITIAL_LOCATION') }}"
+manifest_uuid: "{{ lookup('env', 'MANIFEST_UUID') }}"
+
+
+export_git_url: git@github.mmm.com:AAYM8ZZ/satellite-configuration-artifacts.git
+export_git_branch: jwtesting

@@ -1,0 +1,10 @@
+# Master requirements.yml
+#
+# While requirements can be directly configured here, one file per role has some readability improvements
+- include: ansible-role-dummy.yml
+- include: ansible-role-satellite-configuration-export.yml
+- include: ansible-role-install-satellite.yml
+
+# But directly configuring roles is also allowed
+#- src: cusiang.helloworld
+# .... except direct ansible-galaxy access is deined

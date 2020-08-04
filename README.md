@@ -1,1 +1,1 @@
-# RHSat-management
+# satellite-management-playbooks

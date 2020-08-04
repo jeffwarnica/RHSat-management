@@ -1,0 +1,4 @@
+- src: git@github.mmm.com:AAYM8ZZ/ansible-role-dummy.git
+  scm: git
+  version: v2.0 # Can take a git tag, branch, hash
+  name: ansible-role-dummy      #same in this example, but could be a local alias if you don't like the upstream name
