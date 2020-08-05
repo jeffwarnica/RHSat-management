@@ -1,0 +1,17 @@
+[red]
+rhsatred
+[red:vars]
+satellite_manifest_uuid=e3903846-7625-4eef-82c0-0c85d8d2314
+satellite_location=AWS
+
+[blue]
+rhsatblue
+[blue:vars]
+satellite_manifest_uuid=ac69d128-a81d-4d7b-9716-fcec225ebc7f
+satellite_location=Azure
+
+[green]
+rhsatgreen
+[green:vars]
+satellite_manifest_uuid=bb1b5266-b3a7-4946-8f14-ebce5155ffcf
+satellite_location=AWS
