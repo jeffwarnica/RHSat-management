@@ -33,7 +33,7 @@ export_configuration.yml : Exports "all" the configuration out of a Satellite, a
 
 ## Sample invocation
 
-``
+```
 ansible-playbook -i inventory/lab export_configuration.yml -e satellite_admin_password='my_cool_password17'
 ```
 
