@@ -10,5 +10,12 @@ foreman_initial_location: "{{ lookup('env','FOREMAN_INITIAL_LOCATION') }}"
 manifest_uuid: "{{ lookup('env', 'MANIFEST_UUID') }}"
 
 
+# Girt repositories and branches for the import/export of artifacts
+# import/export are different settings to allow for expanding out to
+# a CI/CD pipeline, or ease of testing/debugging personal content
+ 
 export_git_url: git@github.mmm.com:MMM/RHSat-configuration.git
 export_git_branch: jwtesting
+import_git_url: git@github.mmm.com:AAYMAZZ/sat-artifacts-test.git
+import_git_branch: exported
+

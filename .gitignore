@@ -1,3 +1,4 @@
 roles/*
+!roles/*yml
 !roles/requirements.yml
 !roles/README.md

@@ -20,11 +20,11 @@ roles/ stores the *configuration* settings for all the dependent roles. At runti
 
 #### Install
 
-install_satellite.yml : Does a day 0 install of Satellite to a suitably configured RHEL 7.x server. Connects to the Red Hat Network (RHN), patches the OS, configures LVM, and runs the Satellite installation script proper. Additionally, critical day 0 configurations are setup.
+satellite_install.yml : Does a day 0 install of Satellite to a suitably configured RHEL 7.x server. Connects to the Red Hat Network (RHN), patches the OS, configures LVM, and runs the Satellite installation script proper. Additionally, critical day 0 configurations are setup.
 
 #### Configure
 
-configure_satellite.yml : Day 0/1 configuration and reconfiguration. Reads settings from a specified git repository. Intentionally dumb as it applies "all" settings found in the git repository.
+satellite_configure.yml : Day 0/1 configuration and reconfiguration. Reads settings from a specified git repository. Intentionally dumb as it applies "all" settings found in the git repository.
 
 #### Export
 

@@ -1,12 +1,12 @@
 ---
-- hosts: all
+- hosts: satellite[0]
   gather_facts: no
   connection: local
   
   tasks:
-    - name: Run Export Role
+    - name: Run Import Role
       include_role:
-        name: ansible-role-satellite-configuration-export
+        name: ansible-role-satellite-configuration-import
       run_once: true
       vars:
         git_url: '{{ export_git_url }}'
