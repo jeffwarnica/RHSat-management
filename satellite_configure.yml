@@ -3,6 +3,10 @@
   hosts: satellite[0] # All API driven, hit the main satellite server
   gather_facts: no 
   connection: local
+
+  collections:
+    - theforeman.foreman
+
   tasks:
 
   - name: GIT export - create temporary git repository directory
