@@ -4,6 +4,12 @@ rhsatred
 satellite_manifest_uuid=e3903846-7625-4eef-82c0-0c85d8d2314
 satellite_location=AWS
 
+[redcapsule]
+rhcapred11.mmm.com
+rhcapred12.mmm.com
+[redcapsule:vars]
+satellite_fqdn=rhsatred.mmm.com
+
 [blue]
 rhsatblue
 [blue:vars]
