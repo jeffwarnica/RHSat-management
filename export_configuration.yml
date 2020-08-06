@@ -8,9 +8,3 @@
       include_role:
         name: ansible-role-satellite-configuration-export
       run_once: true
-      vars:
-        git_url: '{{ export_git_url }}'
-        git_push_branch: '{{ export_git_branch }}'
-        sat_api_password: '{{ satellite_admin_password }}'
-        sat_api_user: '{{ satellite_admin_username }}'
-        curl_validate_certs: false
