@@ -2,3 +2,7 @@ roles/*
 !roles/*yml
 !roles/requirements.yml
 !roles/README.md
+
+collections/*
+!collections/requirements.yml
+!collections/README.md

@@ -1,0 +1,6 @@
+---
+- name: satellite
+  hosts: red
+  become: true
+  roles:
+    - role: /linux_bastion_files/home/a6q8rzz/git/RHSat-install 
