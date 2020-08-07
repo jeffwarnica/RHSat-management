@@ -13,6 +13,7 @@ manifest_uuid: "{{ lookup('env', 'MANIFEST_UUID') }}"
 
 
 satellite_api_validate_certs: false
+curl_validate_certs: false
 
 # Girt repositories and branches for the import/export of artifacts
 # import/export are different settings to allow for expanding out to
