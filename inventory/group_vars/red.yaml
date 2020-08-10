@@ -3,3 +3,4 @@ satellite_location: AWS
 satellite_fqdn: rhsatred.mmm.com
 satellite_org: 3M_OnPrem
 capsule_ak: capsule-ak
+capsules_vip: rhcapred.mmm.com
