@@ -1,6 +1,6 @@
 satellite_manifest_uuid: e3903846-7625-4eef-82c0-0c85d8d2314
 satellite_location: AWS
 satellite_fqdn: rhsatred.mmm.com
-satellite_org: 3M_OnPrem
+satellite_org: 3M_Global
 capsule_ak: capsule-ak
 capsules_vip: rhcapred.mmm.com
