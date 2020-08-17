@@ -3,5 +3,5 @@ satellite_location: Azure
 satellite_fqdn: rhsatblue.mmm.com
 satellite_org: 3M_Global
 capsule_ak: capsule-ak
-capsules_vip: rhcapblue.mmm.com
+capsules_vip: bluesat.mmm.com
 satellite_data_disk: /dev/sdc
