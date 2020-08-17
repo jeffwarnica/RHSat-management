@@ -4,3 +4,4 @@ satellite_fqdn: rhsatblue.mmm.com
 satellite_org: 3M_OnPrem
 capsule_ak: capsule-ak
 capsules_vip: rhcapblue.mmm.com
+satellite_data_disk: /dev/sdc
