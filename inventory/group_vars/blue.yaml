@@ -1,7 +1,7 @@
 satellite_manifest_uuid: ac69d128-a81d-4d7b-9716-fcec225ebc7f
 satellite_location: AWS
 satellite_fqdn: rhsatblue.mmm.com
-satellite_org: 3M_OnPrem
+satellite_org: 3M_Global
 capsule_ak: capsule-ak
 capsules_vip: rhcapblue.mmm.com
 satellite_data_disk: /dev/sdc
