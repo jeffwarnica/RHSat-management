@@ -23,3 +23,7 @@ export_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
 export_git_branch: jwtesting
 import_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
 import_git_branch: jwtesting
+
+# Set to true to not delete the /tmp git storage
+io_git_keep_repos: true
+
