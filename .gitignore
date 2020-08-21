@@ -1,4 +1,4 @@
-ansible.log
+ansible*.log
 roles/*
 !roles/*yml
 !roles/requirements.yml
