@@ -1,0 +1,11 @@
+# Master requirements.yml
+#
+# While requirements can be directly configured here, one file per role has some readability improvements
+roles:
+  - include: ansible-role-dummy.yml
+  - include: RHSat-ansible-role-satellite-configuration-export.yml
+  - include: ansible-role-install-satellite.yml
+
+  - name: RHSat-config
+    src: https://github.com/cojmckee/RHSat-config
+

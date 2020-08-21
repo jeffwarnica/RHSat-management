@@ -1,0 +1,8 @@
+---
+- name: Install Satellite
+  hosts: all
+  tasks:
+
+  - name: Include satellite install role
+    include_role:
+      name: RHSat-install

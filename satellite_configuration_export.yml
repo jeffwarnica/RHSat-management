@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  
+  tasks:
+    - name: Run Export Role
+      include_role:
+        name: satellite-configuration-export
+      run_once: true

@@ -1,0 +1,5 @@
+# Master requirements.yml
+#
+# While requirements can be directly configured here, one file per role has some readability improvements
+collections:
+  - name: theforeman.foreman

@@ -1,0 +1,29 @@
+account_id: "{{ lookup('env','SAT_ACCOUNT_ID') }}"
+rhn_activation_key: "{{ lookup('env','RHN_AK') }}"
+rhn_org: "{{ lookup('env','RHN_ORG')}}"
+rhn_connect: "{{ lookup('env','RHN_CONNECT') }}"
+content_source: "{{ lookup('env','CONTENT_SOURCE') }}"
+satellite_admin_username: "admin"
+satellite_admin_password: "{{ lookup('env','FOREMAN_PASSWORD') }}"
+satellite_api_username: "admin"
+satellite_api_password: CHANGEME
+foreman_initial_organization: "{{ lookup('env','FOREMAN_INITIAL_ORGANIZATION') }}"
+foreman_initial_location: "{{ lookup('env','FOREMAN_INITIAL_LOCATION') }}"
+manifest_uuid: "{{ lookup('env', 'MANIFEST_UUID') }}"
+
+
+satellite_api_validate_certs: false
+curl_validate_certs: false
+
+# Girt repositories and branches for the import/export of artifacts
+# import/export are different settings to allow for expanding out to
+# a CI/CD pipeline, or ease of testing/debugging personal content
+ 
+export_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
+export_git_branch: jwtesting
+import_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
+import_git_branch: jwtesting
+
+# Set to true to not delete the /tmp git storage
+io_git_keep_repos: true
+

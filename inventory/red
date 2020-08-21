@@ -1,0 +1,10 @@
+[satellite]
+rhsatred.mmm.com
+
+[capsule]
+rhcapred11.mmm.com
+rhcapred12.mmm.com
+
+[red:children]
+satellite
+capsule

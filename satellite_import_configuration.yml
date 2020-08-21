@@ -1,0 +1,12 @@
+---
+- hosts: satellite[0]
+  gather_facts: no
+  connection: local
+  
+  tasks:
+    - name: Run Import Role
+      include_role:
+        name: ansible-role-satellite-configuration-import
+      run_once: true
+      vars:
+        curl_validate_certs: false

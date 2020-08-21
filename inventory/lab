@@ -1,0 +1,7 @@
+[satellite]
+rhsatred.mmm.com
+[capsule]
+
+[lab:children]
+satellite
+capsule

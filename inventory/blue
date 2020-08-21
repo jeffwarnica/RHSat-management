@@ -1,0 +1,12 @@
+[blue_satellite]
+rhsatblue.mmm.com
+
+[blue_capsule]
+rhcapblue11.mmm.com
+rhcapblue12.mmm.com
+rhcapblue21.mmm.com
+rhcapblue22.mmm.com
+
+[red:children]
+blue_satellite
+blue_capsule
