@@ -30,3 +30,6 @@ compute_resource_proxmox_password: "PROXMOX_PASS"
 compute_resource_ec2_password: "EC2_PASS"
 compute_resource_azurerm_password: "AZURERM_PASS"
 compute_resource_gce_password: "GCE_PASS"
+
+# Set to true to not delete the /tmp git storage
+io_git_keep_repos: true
