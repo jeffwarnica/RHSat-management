@@ -15,15 +15,21 @@ manifest_uuid: "{{ lookup('env', 'MANIFEST_UUID') }}"
 satellite_api_validate_certs: false
 curl_validate_certs: false
 
-# Girt repositories and branches for the import/export of artifacts
+# Git repositories and branches for the import/export of artifacts
 # import/export are different settings to allow for expanding out to
 # a CI/CD pipeline, or ease of testing/debugging personal content
  
 export_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
-export_git_branch: jwtesting
+export_git_branch: sat-prod-08242020
 import_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
-import_git_branch: jwtesting
+import_git_branch: sat-prod-08242020
+
+compute_resource_vmware_password: "VMWARE_PASS"
+compute_resource_ovirt_password: "OVIRT_PASS"
+compute_resource_proxmox_password: "PROXMOX_PASS"
+compute_resource_ec2_password: "EC2_PASS"
+compute_resource_azurerm_password: "AZURERM_PASS"
+compute_resource_gce_password: "GCE_PASS"
 
 # Set to true to not delete the /tmp git storage
 io_git_keep_repos: true
-
