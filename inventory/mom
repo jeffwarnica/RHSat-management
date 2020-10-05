@@ -1,0 +1,10 @@
+[satellite]
+rhsatmom.EXAMPLEMPLE.com
+
+[capsule]
+#rhcapred11.EXAMPLEMPLE.com
+#rhcapred12.EXAMPLEMPLE.com
+
+[red:children]
+satellite
+capsule
