@@ -1,11 +1,11 @@
 [blue_satellite]
-rhsatblue.mmm.com
+rhsatblue.EXAMPLEMPLE.com
 
 [blue_capsule]
-rhcapblue11.mmm.com
-rhcapblue12.mmm.com
-rhcapblue21.mmm.com
-rhcapblue22.mmm.com
+rhcapblue11.EXAMPLEMPLE.com
+rhcapblue12.EXAMPLEMPLE.com
+rhcapblue21.EXAMPLEMPLE.com
+rhcapblue22.EXAMPLEMPLE.com
 
 [red:children]
 blue_satellite

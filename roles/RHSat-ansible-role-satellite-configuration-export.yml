@@ -1,4 +1,4 @@
 - name: satellite-configuration-export
-  src: git@github.mmm.com:MMM/RHSat-ansible-role-satellite-configuration-export.git
+  src: git@github.EXAMPLE.com:EXAMPLE/RHSat-ansible-role-satellite-configuration-export.git
   scm: git
   version: master

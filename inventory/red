@@ -1,9 +1,9 @@
 [satellite]
-rhsatred.mmm.com
+rhsatred.EXAMPLEMPLE.com
 
 [capsule]
-rhcapred11.mmm.com
-rhcapred12.mmm.com
+rhcapred11.EXAMPLEMPLE.com
+rhcapred12.EXAMPLEMPLE.com
 
 [red:children]
 satellite

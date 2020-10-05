@@ -19,9 +19,9 @@ curl_validate_certs: false
 # import/export are different settings to allow for expanding out to
 # a CI/CD pipeline, or ease of testing/debugging personal content
  
-export_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
+export_git_url: git@github.EXAMPLEMPLE.EXAMPLE:EXAMPLE/RHSat-configuration-dumps.git
 export_git_branch: sat-prod-08242020
-import_git_url: git@github.mmm.com:MMM/RHSat-configuration-dumps.git
+import_git_url: git@github.EXAMPLEMPLE.EXAMPLE:EXAMPLE/RHSat-configuration-dumps.git
 import_git_branch: sat-prod-08242020
 
 compute_resource_vmware_password: "VMWARE_PASS"
