@@ -1,11 +1,5 @@
-satellite_rhn_username: "rhn-gps-jwarnica"
-satellite_rhn_password: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          63633136653062366664303038303334636264386264643765346534623664343230316336616632
-          6261656431643839636262623231323635616237363832330a353534336265346364393862363737
-          38616365376237636362393639393861333833346564376636636136393563373539393138346338
-          6637326339633339650a343839656464313932623331393365353632653131653431613665613536
-          3739
+satellite_rhn_username: "rhn-gps-you"
+satellite_rhn_password: #HA! 
 
 satellite_manifest_uuid: de9139e5-0698-4fd2-9fe6-ef50db707845 #JWLabSat
 satellite_location: PracticeLab
@@ -15,6 +9,7 @@ capsule_ak: capsule-ak
 capsules_vip: bluesat.EXAMPLEMPLE.com
 satellite_data_disk: /dev/sdb
 
+# "redhat"
 satellite_admin_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           66376430333733333335343237613433363565373865373930613866316534373065313532323066
@@ -27,9 +22,9 @@ satellite_admin_password: !vault |
 satellite_certs_generate: false
 
 # Full local paths to provided certificate details
-satellite_certs_provided_cert: /home/jwarnica/Projects/IBM_SAP/certtmp/jw-sat-toy2.practice.redhat.com_cert.pem
-satellite_certs_provided_key: /home/jwarnica/Projects/IBM_SAP/certtmp/jw-sat-toy2.practice.redhat.com_cert_key.pem
-satellite_certs_provided_ca_bundle: /home/jwarnica/Projects/IBM_SAP/certtmp/jw-sat-toy2.practice.redhat.com_cert_bundle.pem
+satellite_certs_provided_cert: //blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert.pem
+satellite_certs_provided_key: //blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert_key.pem
+satellite_certs_provided_ca_bundle: //blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert_bundle.pem
 
 
 # 8.firehose
@@ -40,7 +35,8 @@ satellite_rhel8_cv:
         reponame: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.2"
         label: rhel-8-for-x86_64-baseos-rpms
         product: "Red Hat Enterprise Linux for x86_64"
-        all: True
+        all: True   #8.x is c
+        all: True   #8.x is c
         # repos:
         #   - releasever: "8.2"
         #     basearch: "{{ satellite_server_basearch }}"
