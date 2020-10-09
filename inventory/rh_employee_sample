@@ -1,0 +1,9 @@
+[satellite]
+jw-sat-toy2.practice.redhat.com ansible_user=root
+
+[capsule]
+
+
+[practice_lab_toy:children]
+satellite
+capsule

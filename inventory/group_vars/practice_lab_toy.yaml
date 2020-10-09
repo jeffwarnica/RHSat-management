@@ -1,0 +1,129 @@
+satellite_rhn_username: "rhn-gps-jwarnica"
+satellite_rhn_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          63633136653062366664303038303334636264386264643765346534623664343230316336616632
+          6261656431643839636262623231323635616237363832330a353534336265346364393862363737
+          38616365376237636362393639393861333833346564376636636136393563373539393138346338
+          6637326339633339650a343839656464313932623331393365353632653131653431613665613536
+          3739
+
+satellite_manifest_uuid: de9139e5-0698-4fd2-9fe6-ef50db707845 #JWLabSat
+satellite_location: PracticeLab
+satellite_fqdn: jw-sat-toy2.practice.redhat.com
+satellite_org: Example_Global
+capsule_ak: capsule-ak
+capsules_vip: bluesat.EXAMPLEMPLE.com
+satellite_data_disk: /dev/sdb
+
+satellite_admin_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          66376430333733333335343237613433363565373865373930613866316534373065313532323066
+          3165356364646232353032613262666333383664303236620a333562613235633666383961386534
+          37356230373232396464633930326664653434653062393837343164383563346337636234363033
+          6363376538303866660a636161396535323138313135633562653961363938633365323638343334
+          3132
+
+
+satellite_certs_generate: false
+
+# Full local paths to provided certificate details
+satellite_certs_provided_cert: /home/jwarnica/Projects/IBM_SAP/certtmp/jw-sat-toy2.practice.redhat.com_cert.pem
+satellite_certs_provided_key: /home/jwarnica/Projects/IBM_SAP/certtmp/jw-sat-toy2.practice.redhat.com_cert_key.pem
+satellite_certs_provided_ca_bundle: /home/jwarnica/Projects/IBM_SAP/certtmp/jw-sat-toy2.practice.redhat.com_cert_bundle.pem
+
+
+# 8.firehose
+satellite_rhel8_cv:
+  - name: RHEL8 Base Content View
+    repos:
+      - reposetname: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs"
+        reponame: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS RPMs 8.2"
+        label: rhel-8-for-x86_64-baseos-rpms
+        product: "Red Hat Enterprise Linux for x86_64"
+        all: True
+        # repos:
+        #   - releasever: "8.2"
+        #     basearch: "{{ satellite_server_basearch }}"
+
+      - reposetname: "Red Hat Ansible Engine 2 for RHEL 8 x86_64 (RPMs)"
+        reponame: "Red Hat Ansible Engine 2 for RHEL 8 x86_64 RPMs"
+        label: ansible-2-for-rhel-8-x86_64-rpms
+        product: "Red Hat Ansible Engine"
+        all: True
+        # repos:
+        #   - releasever: "8.2"
+        #     basearch: "{{ satellite_server_basearch }}"
+
+# 8.2 + SAP, pegged to a point release because SAP is needy
+satellite_rhel82_sap_cv:
+  - name: RHEL82 SAP Content View
+    repos:
+      - reposetname: "Red Hat Enterprise Linux 8 for x86_64 - AppStream (RPMs)"
+        reponame: "Red Hat Enterprise Linux 8 for x86_64 - AppStream RPMs 8.2"
+        label: rhel-8-for-x86_64-appstream-rpms
+        product: "Red Hat Enterprise Linux for x86_64"
+        all: True
+        # repos:
+        #   - releasever: "8.2"
+        #     basearch: "{{ satellite_server_basearch }}"
+
+      - reposetname: "Red Hat Enterprise Linux 8 for x86_64 - SAP Solutions (RPMs)"
+        reponame: "Red Hat Enterprise Linux 8 for x86_64 - SAP Solutions RPMs 8.2"
+        label: rhel-8-for-x86_64-sap-solutions-rpms
+        product: "Red Hat Enterprise Linux for SAP HANA for x86_64"
+        all: True
+        # repos:
+        #   - releasever: "8.2"
+        #     basearch: "{{ satellite_server_basearch }}"
+
+      - reposetname: "Red Hat Enterprise Linux 8 for x86_64 - SAP NetWeaver (RPMs)"
+        reponame: "Red Hat Enterprise Linux 8 for x86_64 - SAP NetWeaver RPMs 8.2"
+        label: rhel-8-for-x86_64-sap-netweaver-rpms
+        product: "Red Hat Enterprise Linux for SAP Applications for x86_64"
+        all: True
+        # repos:
+        #   - releasever: "8.2"
+        #     basearch: "{{ satellite_server_basearch }}"
+
+#Enable the content views. For ease of code later, this must be done twice in different formats
+satellite_all_cvs: "{{ satellite_rhel7_base_cv + satellite_rhel7_capsule_cv + satellite_rhel8_cv + satellite_rhel82_sap_cv  }}"
+
+
+satellite_rhel8sap_capsule_ccv:
+  - name: RHEL8 SAP Composite Content View
+    components:
+      - content_view: RHEL8 Base Content View
+        latest: true
+      - content_view: RHEL82 SAP Content View
+        latest: true
+
+satellite_all_ccvs: "{{ satellite_rhel7_capsule_ccv + satellite_rhel8sap_capsule_ccv }}" 
+
+
+#stock, but override for employee subscription
+satellite_activation_keys_from_role_override:
+  - name: capsule-ak
+    lifecycle_environment: "Library"
+    content_view: RHEL7 Satellite Capsule Composite Content View
+    host_collections:
+      - capsule_hc
+    subscriptions:
+      - name: "Red Hat Satellite Employee Subscription"
+    content_overrides:
+      - label: rhel-7-server-ansible-2.8-rpms
+        override: enabled
+      - label: rhel-7-server-satellite-maintenance-6-rpms
+        override: enabled
+      - label: rhel-server-rhscl-7-rpms
+        override: enabled
+      - label: rhel-7-server-satellite-tools-{{ satellite_deployment_version }}-rpms
+        override: enabled
+      - label: rhel-7-server-satellite-capsule-{{ satellite_deployment_version }}-rpms
+        override: enabled
+      - label: rhel-7-server-rpms
+        override: enabled
+    auto_attach: true
+    release_version: 7Server
+    service_level: "Premium"
+
+satellite_activation_keys: "{{ satellite_activation_keys_from_role_override }}"

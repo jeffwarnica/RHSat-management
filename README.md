@@ -4,13 +4,17 @@ The main entry point for Satellite installation, configuration and artifact expo
 
 ## Layout and Design
 
-This project is for the management of a Satellite installation, modeled around a lab/dev sytem, and several production systems. Install is broken up into two phases, install and configue, and there is additionally an export mechanism.
+This project is for the management of a Satellite installation, modeled around a lab/dev system, and several production systems. Install is broken up into two phases, install and configure, and there is additionally an export mechanism.
+
+The theory of operation is that you can define in code the baseline configuration of several Satellite systems (themselves being very similar), and deploy them together. Day 0 install time and first run configuration time settings are encoded as Ansible inventory settings.
+
+There is, furthermore, the ability to export the "runtime" configuration of a Satellite system ("everything" except the content itself), and import that dump to another system.
 
 ### Common Inventory
 
-inventory/ : Stores an inventory of the various Satellite infrastructures. Generally we would expect many common settings to be in inventory/group_vars/all.yml (git repos and install time configuration setetings, for example), though one may wish to have, e.g. different passwords in inventory/group_vars/<infra>.yml 
+inventory/ : Stores an inventory of the various Satellite infrastructures. Generally we would expect many common settings to be in inventory/group_vars/all.yml (git repos and install time configuration settings, for example), though one may wish to have, e.g. different passwords in inventory/group_vars/<infra>.yml 
 
-It is undecided if credentials are stored in the inventory (vaulted) or to be usually passed on the command line as extra vars, or a json extra vars file not managed by git.
+Depending on your circumstances, you may wish to store passwords vaulted in these inventory files, or locally in an extra var file, or perhaps leverage an external credential management system.
 
 ### Common Roles
 
@@ -28,7 +32,7 @@ satellite_configure.yml : Day 0/1 configuration and reconfiguration. Reads setti
 
 #### Export
 
-export_configuration.yml : Exports "all" the configuration out of a Satellite, and stores it in a specified  
+export_configuration.yml : Exports "all" the configuration out of a Satellite, and stores it in a specified git repository.
 
 
 ## Sample invocation
@@ -37,9 +41,10 @@ export_configuration.yml : Exports "all" the configuration out of a Satellite, a
 ansible-playbook -i inventory/lab export_configuration.yml -e satellite_admin_password='my_cool_password17'
 ```
 
-Authors:
-Jeff Warnica: <jwarnica@redhat.com>
-Cory McKee: <cmckee@redhat.com>
-Ritesh Chitala: <rchitali@redhat.com>
+Authors
+--------
+Jeff Warnica: <jwarnica@redhat.com>    
+Cory McKee: <cmckee@redhat.com>      
+Ritesh Chitala: <rchitali@redhat.com>    
 
 

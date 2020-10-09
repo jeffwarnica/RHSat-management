@@ -1,6 +1,4 @@
 satellite_manifest_uuid: 8fb89611-4974-4f2a-a6bf-9bdb30601fb2 
 satellite_location: AWS
 satellite_fqdn: rhsatmom.EXAMPLE.com
-satellite_org: 3M_Global
-#capsule_ak: capsule-ak
-#capsules_vip: redsat.EXAMPLE.com
+satellite_org: Example_Global

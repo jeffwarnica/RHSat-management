@@ -3,8 +3,20 @@
 # While requirements can be directly configured here, one file per role has some readability improvements
 roles:
   - include: ansible-role-dummy.yml
-  - include: RHSat-ansible-role-satellite-configuration-export.yml
-  - include: ansible-role-install-satellite.yml
+
+  - name: satellite-configuration-export
+    src: git@github.EXAMPLE.com:EXAMPLE/RHSat-ansible-role-satellite-configuration-export.git
+    scm: git
+    version: master
+
+  - name: satellite-configuration-import
+    src: git@github.EXAMPLE.com:EXAMPLE/RHSat-ansible-role-satellite-configuration-export.git
+    scm: git
+    version: master
+
+  - name: RHSat-install
+    src: git@github.EXAMPLE.com:EXAMPLE/RHSat-install.git
+    scm: git
 
   - name: RHSat-config
     src: https://github.com/cojmckee/RHSat-config

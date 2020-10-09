@@ -1,3 +1,0 @@
-- name: RHSat-install
-  src: git@github.EXAMPLE.com:EXAMPLE/RHSat-install.git
-  scm: git

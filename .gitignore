@@ -7,3 +7,5 @@ roles/*
 collections/*
 !collections/requirements.yml
 !collections/README.md
+
+.vault_pw
