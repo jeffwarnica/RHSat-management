@@ -1,30 +1,24 @@
 satellite_rhn_username: "rhn-gps-you"
-satellite_rhn_password: #HA! 
+satellite_rhn_password: #HA!  # generate with: `echo -n "horsebattertstaple" | ansible-vault encrypt_string`
 
 satellite_manifest_uuid: de9139e5-0698-4fd2-9fe6-ef50db707845 #JWLabSat
 satellite_location: PracticeLab
 satellite_fqdn: jw-sat-toy2.practice.redhat.com
 satellite_org: Example_Global
-capsule_ak: capsule-ak
-capsules_vip: bluesat.EXAMPLEMPLE.com
+
+#needs about 2TB given the configuration deep in the role
 satellite_data_disk: /dev/sdb
 
-# "redhat"
-satellite_admin_password: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          66376430333733333335343237613433363565373865373930613866316534373065313532323066
-          3165356364646232353032613262666333383664303236620a333562613235633666383961386534
-          37356230373232396464633930326664653434653062393837343164383563346337636234363033
-          6363376538303866660a636161396535323138313135633562653961363938633365323638343334
-          3132
+satellite_admin_username: admin  #default, but for visiblity
+satellite_admin_password: # generate with: `echo -n "redhat" | ansible-vault encrypt_string`
 
 
 satellite_certs_generate: false
 
 # Full local paths to provided certificate details
-satellite_certs_provided_cert: //blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert.pem
-satellite_certs_provided_key: //blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert_key.pem
-satellite_certs_provided_ca_bundle: //blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert_bundle.pem
+satellite_certs_provided_cert: /blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert.pem
+satellite_certs_provided_key: /blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert_key.pem
+satellite_certs_provided_ca_bundle: /blah/blagh/blagh/certtmp/jw-sat-toy2.practice.redhat.com_cert_bundle.pem
 
 
 # 8.firehose
@@ -97,6 +91,8 @@ satellite_all_ccvs: "{{ satellite_rhel7_capsule_ccv + satellite_rhel8sap_capsule
 
 
 #stock, but override for employee subscription
+# For non-employee subscriptions, the default in the role might be OK(???)
+# So delete this, through to the end of the file for the defaults.
 satellite_activation_keys_from_role_override:
   - name: capsule-ak
     lifecycle_environment: "Library"
@@ -104,7 +100,7 @@ satellite_activation_keys_from_role_override:
     host_collections:
       - capsule_hc
     subscriptions:
-      - name: "Red Hat Satellite Employee Subscription"
+      - name: "Red Hat Satellite Employee Subscription" #the only thing we actually changed
     content_overrides:
       - label: rhel-7-server-ansible-2.8-rpms
         override: enabled

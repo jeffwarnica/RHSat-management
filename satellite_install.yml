@@ -5,5 +5,5 @@
 
   - name: Include satellite install role
     include_role:
-      name: RHSat-install
+      name: RHSat-ansible-install
     tags: always
